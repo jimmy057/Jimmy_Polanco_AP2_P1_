@@ -11,7 +11,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.Jimmy_Polanco_ap2_p1_"
+        applicationId = "com.example.jimmy_polanco_ap2_p1_"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

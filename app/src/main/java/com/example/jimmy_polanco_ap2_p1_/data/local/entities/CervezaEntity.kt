@@ -3,12 +3,14 @@ package com.example.jimmy_polanco_ap2_p1_.data.local.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "Cerveza")
+@Entity(tableName = "cerveza")
 data class CervezaEntity(
+
     @PrimaryKey(autoGenerate = true)
-    val IdCerveza: Int = 0,
-    val Nombre: String,
-    val Marca: String,
-    val Puntuacion: Int
+    val idCerveza: Int = 0,
+
+    val nombre: String,
+    val marca: String,
+    val puntuacion: Int
 )
 

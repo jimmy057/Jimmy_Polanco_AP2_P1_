@@ -1,50 +1,47 @@
 package com.example.jimmy_polanco_ap2_p1_.di
 
 import android.content.Context
-import androidx.room.Dao
-import androidx.room.RoomDatabase
-import com.example.jimmy_polanco_ap2_p1_.data.local.dao.Cervezadao
-import com.example.jimmy_polanco_ap2_p1_.data.local.database.appdatabase
+import androidx.room.Room
+import com.example.jimmy_polanco_ap2_p1_.data.local.dao.CervezaDao
+import com.example.jimmy_polanco_ap2_p1_.data.local.database.AppDatabase
 import com.example.jimmy_polanco_ap2_p1_.data.repository.CervezaRepositoryImpl
 import com.example.jimmy_polanco_ap2_p1_.domain.repository.CervezaRepository
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-
-
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    @provides
+    @Provides
     @Singleton
     fun provideDatabase(
         @ApplicationContext context: Context
-    ): appdatabase {
-        return RoomDatabaseBuilder(
+    ): AppDatabase {
+        return Room.databaseBuilder(
             context,
-            appdatabase::class.java,
-            "appdatabase"
-        ).Build()
+            AppDatabase::class.java,
+            "app_database"
+        ).build()
     }
 
-    @provides
+    @Provides
     @Singleton
     fun provideCervezaDao(
-        database: appdatabase
-    ): Cervezadao {
-        return database.Cervezadao()
+        database: AppDatabase
+    ): CervezaDao {
+        return database.cervezaDao()
     }
 
-    @provides
+    @Provides
     @Singleton
     fun provideCervezaRepository(
-        dao: Cervezadao
+        dao: CervezaDao
     ): CervezaRepository {
         return CervezaRepositoryImpl(dao)
     }
-
 }

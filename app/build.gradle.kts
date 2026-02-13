@@ -70,6 +70,9 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.runtime)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.foundation)
     debugImplementation(libs.androidx.ui.tooling)
 
     // Navigation

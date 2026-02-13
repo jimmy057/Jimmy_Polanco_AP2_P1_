@@ -2,11 +2,13 @@ package com.example.jimmy_polanco_ap2_p1_.domain.usecase
 
 import com.example.jimmy_polanco_ap2_p1_.domain.model.Cerveza
 import com.example.jimmy_polanco_ap2_p1_.domain.repository.CervezaRepository
+import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class GetCervezaUseCase (
+class GetCervezaUseCase @Inject constructor(
     private val repository: CervezaRepository
-){
-    suspend operator fun invoke(cerveza: Cerveza) {
+) {
+    operator fun invoke(): Flow<List<Cerveza>> {
         return repository.getAll()
     }
 }

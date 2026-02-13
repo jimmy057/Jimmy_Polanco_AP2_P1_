@@ -6,12 +6,13 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import androidx.room.Upsert
+import androidx.room.OnConflictStrategy
 import com.example.jimmy_polanco_ap2_p1_.data.local.entities.CervezaEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-   interface Cervezadao {
-       @Insert(onConflict = onConflictStrategy.REPLACE)
+   interface CervezaDao {
+       @Insert(onConflict = OnConflictStrategy.REPLACE)
        suspend fun insert(cerveza: CervezaEntity)
        @Update
        suspend fun update(cerveza: CervezaEntity)

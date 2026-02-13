@@ -23,6 +23,9 @@ material3 = "1.4.0"
 firebaseAppdistributionGradle = "5.1.1"
 runtime = "1.10.1"
 lifecycleRuntimeCompose = "2.10.0"
+runtimeVersion = "1.10.2"
+ui = "1.10.2"
+foundationVersion = "1.10.2"
 
 
 [libraries]
@@ -55,6 +58,9 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 firebase-appdistribution-gradle = { group = "com.google.firebase", name = "firebase-appdistribution-gradle", version.ref = "firebaseAppdistributionGradle" }
 androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "runtime" }
 androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleRuntimeCompose" }
+androidx-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "runtimeVersion" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
+androidx-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundationVersion" }
 
 
 [plugins]
